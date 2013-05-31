@@ -1,19 +1,36 @@
+execute pathogen#infect()
+let g:Powerline_symbols = 'fancy'
+set t_Co=256
+
 syntax on
 
 hi Comment ctermfg=DarkGreen guifg=Green
 
+set background=dark
+" solarized options 
+let g:solarized_termcolors = 256
+"let g:solarized_termtrans = 1
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+colorscheme solarized
+"colorscheme zenburn
+"colorscheme wombat256
+
 set hlsearch
 set encoding=utf-8
-set ts=4
-set tabstop=4
+set ts=2
+set tabstop=2
 set ai
 set nu
 set hls
 set sw=2
 set et
 set showmatch
-set shiftwidth=4
-set noexpandtab
+set shiftwidth=2
+"set noexpandtab
+set expandtab
+set splitbelow
+set splitright
 
 " Show  tab characters. Visual Whitespace.
 "set list
@@ -37,3 +54,7 @@ map <leader>p :cp<cr>
 """"""""""""""""""""""""""""""
 let Grep_Skip_Dirs = 'RCS CVS SCCS .svn generated'
 set grepprg=/bin/grep\ -nH
+
+if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
+    set t_Co=256
+endif
